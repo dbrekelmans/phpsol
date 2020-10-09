@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Phpsol\Type;
 
 use InvalidArgumentException;
+
 use function class_exists;
 use function interface_exists;
 use function sprintf;
 
-final class TClass implements Type
+final class TClass implements Type, Equatable
 {
     /**
      * @psalm-var class-string
@@ -28,13 +29,18 @@ final class TClass implements Type
         $this->class = $class;
     }
 
-    public function toString() : string
-    {
-        return $this->class;
-    }
-
     public function parent() : ?Type
     {
         return new TObject();
+    }
+
+    public function equals(Type $type) : bool
+    {
+        return $type instanceof self && $this->toString() === $type->toString();
+    }
+
+    public function toString() : string
+    {
+        return $this->class;
     }
 }
