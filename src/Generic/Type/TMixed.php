@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
-final class TString implements Type
+final class TMixed implements Type
 {
     public function toString() : string
     {
-        return 'string';
+        return 'mixed';
     }
 
     public function parent() : ?Type
     {
-        return new TMixed();
+        return null;
     }
 }

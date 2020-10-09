@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
-final class TBoolean implements Type
+final class TObject implements Type
 {
     public function toString() : string
     {
-        return 'bool';
+        return 'object';
     }
 
     public function parent() : ?Type

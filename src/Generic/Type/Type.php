@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
 interface Type
 {

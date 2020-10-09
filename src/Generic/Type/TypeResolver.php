@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
 use function class_exists;
 use function get_class;

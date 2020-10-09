@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
-final class TArray implements Type
+final class TInteger implements Type
 {
     public function toString() : string
     {
-        return 'array';
+        return 'int';
     }
 
     public function parent() : ?Type

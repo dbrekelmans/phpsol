@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Type;
+namespace Phpsol\Generic\Type;
 
-final class TInteger implements Type
+final class TFloat implements Type
 {
     public function toString() : string
     {
-        return 'int';
+        return 'float';
     }
 
     public function parent() : ?Type
