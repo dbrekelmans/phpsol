@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Phpsol\Generic\Exception;
 
-use Phpsol\Type\Type;
+use Phpsol\Generic\Type\Type;
 use UnexpectedValueException;
 use function sprintf;
 

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Phpsol\Generic;
 
 use Phpsol\Generic\Exception\MismatchedTemplate;
-use Phpsol\Type\TMixed;
-use Phpsol\Type\Type;
-use Phpsol\Type\TypeResolver;
+use Phpsol\Generic\Type\TMixed;
+use Phpsol\Generic\Type\Type;
+use Phpsol\Generic\Type\TypeResolver;
 
 final class Template
 {
