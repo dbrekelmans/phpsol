@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Phpsol\Generic\Type;
 
+use Phpsol\Generic\Type;
+
 final class TInteger implements Type
 {
     public function toString() : string
@@ -11,8 +13,8 @@ final class TInteger implements Type
         return 'int';
     }
 
-    public function parent() : ?Type
+    public function isAssignable(Type $type) : bool
     {
-        return new TMixed();
+        return $type instanceof self || (new TScalar())->isAssignable($type);
     }
 }

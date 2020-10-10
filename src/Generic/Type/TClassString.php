@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace Phpsol\Generic\Type;
 
 use InvalidArgumentException;
+use Phpsol\Generic\Type;
 
 use function class_exists;
 use function interface_exists;
 use function sprintf;
 
-final class TClassString implements Type, Equatable
+final class TClassString implements Type
 {
     private ?TClass $template;
 
@@ -26,24 +27,6 @@ final class TClassString implements Type, Equatable
         $this->template = $class !== null ? new TClass($class) : null;
     }
 
-    public function parent() : ?Type
-    {
-        return new TString();
-    }
-
-    public function equals(Type $type) : bool
-    {
-        if (!$type instanceof self) {
-            return false;
-        }
-
-        if ($this->toString() === $type->toString()) {
-            return true;
-        }
-
-        return $this->template->equals($type->template());
-    }
-
     public function toString() : string
     {
         if ($this->template !== null) {
@@ -56,5 +39,18 @@ final class TClassString implements Type, Equatable
     public function template() : ?TClass
     {
         return $this->template;
+    }
+
+    public function isAssignable(Type $type) : bool
+    {
+        if ($type instanceof self) {
+            if ($this->template !== null) {
+               return $type->template() !== null && $this->template->isAssignable($type->template());
+            }
+
+            return true;
+        }
+
+        return (new TString())->isAssignable($type);
     }
 }

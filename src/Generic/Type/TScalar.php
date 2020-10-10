@@ -6,15 +6,15 @@ namespace Phpsol\Generic\Type;
 
 use Phpsol\Generic\Type;
 
-final class TBoolean implements Type
+final class TScalar implements Type
 {
     public function toString() : string
     {
-        return 'bool';
+        return 'scalar';
     }
 
     public function isAssignable(Type $type) : bool
     {
-        return $type instanceof self || (new TScalar())->isAssignable($type);
+        return $type instanceof self || (new TMixed())->isAssignable($type);
     }
 }

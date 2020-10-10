@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Phpsol\Generic\Type;
+namespace Phpsol\Generic;
 
 interface Type
 {
     public function toString() : string;
 
-    public function parent() : ?Type;
+    public function isAssignable(Type $type) : bool;
 }

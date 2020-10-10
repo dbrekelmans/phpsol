@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Phpsol\Generic\Type;
 
+use Phpsol\Generic\Type;
+
 final class TMixed implements Type
 {
     public function toString() : string
@@ -11,8 +13,8 @@ final class TMixed implements Type
         return 'mixed';
     }
 
-    public function parent() : ?Type
+    public function isAssignable(Type $type) : bool
     {
-        return null;
+        return $type instanceof self;
     }
 }
