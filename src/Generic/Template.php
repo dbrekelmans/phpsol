@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Phpsol\Generic;
 
+use LogicException;
 use Phpsol\Generic\Exception\MismatchedTemplate;
 use Phpsol\Generic\Exception\TemplateAlreadyInitialized;
 use Phpsol\Generic\Type\Factory;
@@ -76,6 +77,7 @@ final class Template
      */
     public function matchAll(iterable $values) : void
     {
+        /** @var mixed $value */
         foreach ($values as $value) {
             $this->match($value);
         }
