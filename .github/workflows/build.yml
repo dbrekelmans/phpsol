@@ -37,7 +37,6 @@ jobs:
                 run: |
                     vendor/bin/phpunit tests --colors
 
-
-            -   name: PHPUnit
+            -   name: PHPCS
                 run: |
-                    vendor/bin/phpunit tests --colors
+                    .\vendor\bin\phpcs src tests
