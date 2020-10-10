@@ -10,7 +10,9 @@ use Phpsol\Collection\Exception\IndexOutOfBounds;
 use Phpsol\Configuration\Phpsol;
 use Phpsol\Generic\Generic;
 use Phpsol\Generic\Template;
+use Phpsol\Generic\Type;
 use Traversable;
+
 use function array_splice;
 use function array_values;
 use function count;
@@ -37,15 +39,30 @@ final class ArraySequence implements Sequence
 
     /**
      * @psalm-param array<array-key, E> $elements
+     *
      * @param array<int|string, mixed> $elements
      */
-    public function __construct(array $elements = [])
+    public function __construct(array $elements = [], ?Type $elementType = null)
     {
         if (Phpsol::runtimeAssertions()->isEnabled()) {
+            if ($elementType !== null) {
+                $this->__template(self::TEMPLATE_E)->initialize($elementType);
+            }
+
             $this->__template(self::TEMPLATE_E)->matchAll($elements);
         }
 
         $this->elements = array_values($elements);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected static function __templateDefinitions() : array
+    {
+        return [
+            self::TEMPLATE_E => Template::mixed(),
+        ];
     }
 
     /**
@@ -211,15 +228,5 @@ final class ArraySequence implements Sequence
     public function toArray() : array
     {
         return array_values($this->elements);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    protected function __templates() : array
-    {
-        return [
-            self::TEMPLATE_E => Template::mixed(),
-        ];
     }
 }
