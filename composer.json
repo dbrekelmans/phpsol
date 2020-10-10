@@ -16,7 +16,8 @@
     ],
     "require": {
         "php": "^7.4",
-        "webmozart/assert": "^1.8"
+        "webmozart/assert": "^1.8",
+        "phpstan/phpstan": "^0.12.48"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
