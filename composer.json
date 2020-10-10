@@ -1,5 +1,5 @@
 {
-    "name": "dbrekelmans/phpsol",
+    "name": "phpsol/phpsol",
     "type": "library",
     "license": "MIT",
     "description": "PHP Standard Object Library",
@@ -7,11 +7,15 @@
         "Object Library",
         "Standard Object Library"
     ],
-    "homepage": "https://github.com/dbrekelmans/phpsol",
+    "homepage": "https://github.com/phpsol/phpsol",
     "authors": [
         {
             "name": "Daniël Brekelmans",
             "homepage": "https://github.com/dbrekelmans"
+        },
+        {
+            "name": "Maarten Nusteling",
+            "homepage": "https://github.com/nusje2000"
         }
     ],
     "require": {
@@ -25,7 +29,10 @@
         "phpunit/phpunit": "^9.4",
         "phpstan/phpstan": "^0.12.48",
         "squizlabs/php_codesniffer": "^3.5",
-        "vimeo/psalm": "^3.8"
+        "vimeo/psalm": "^3.8",
+        "symfony/console": "^5.1",
+        "symfony/filesystem": "^5.1",
+        "symfony/process": "^5.1"
     },
     "autoload": {
         "psr-4": {
