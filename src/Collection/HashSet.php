@@ -26,7 +26,7 @@ final class HashSet implements Set
      * @psalm-var array<string, E>
      * @var array<string, mixed>
      */
-    private $elements = [];
+    private array $elements = [];
 
     /**
      * @psalm-param array<array-key, E> $elements
