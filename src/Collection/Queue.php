@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Phpsol\Collection;
 
-use Phpsol\Collection\Stack\Exception\EmptyStack;
+use Phpsol\Collection\Exception\EmptyStack;
 
 /**
  * A first in, first out collection.
@@ -31,7 +31,8 @@ interface Queue extends Collection
      * Queues an element in the back of the queue.
      *
      * @psalm-param E $element
-     * @param mixed $element
+     *
+     * @param mixed   $element
      */
     public function queue($element) : void;
 }

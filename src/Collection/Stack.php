@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Phpsol\Collection;
 
-use Phpsol\Collection\Stack\Exception\EmptyStack;
+use Phpsol\Collection\Exception\EmptyStack;
 
 /**
  * A first in, last out collection.
@@ -41,7 +41,8 @@ interface Stack extends Collection
      * Pushes an element on top of the stack.
      *
      * @psalm-param E $element
-     * @param mixed $element
+     *
+     * @param mixed   $element
      */
     public function push($element) : void;
 }

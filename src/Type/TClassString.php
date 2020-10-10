@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Phpsol\Type;
 
 use InvalidArgumentException;
+
 use function class_exists;
 use function interface_exists;
 use function sprintf;
@@ -17,7 +18,7 @@ final class TClassString implements Type
     private ?string $class;
 
     /**
-     * @psalm-param class-string|null $class
+     * @param string|null $class
      */
     public function __construct(?string $class = null)
     {

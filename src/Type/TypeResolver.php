@@ -62,10 +62,11 @@ final class TypeResolver
             return true;
         }
 
-        if ($source->parent() === null) {
+        $parent = $source->parent();
+        if ($parent === null) {
             return false;
         }
 
-        return self::isOf($source->parent(), $target);
+        return self::isOf($parent, $target);
     }
 }
