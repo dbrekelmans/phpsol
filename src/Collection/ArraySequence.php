@@ -67,7 +67,7 @@ final class ArraySequence implements Sequence
      */
     public function add($element) : void
     {
-            $this->__template(self::TEMPLATE_E)->match($element);
+        $this->__template(self::TEMPLATE_E)->match($element);
 
         $this->elements[] = $element;
     }
@@ -77,7 +77,7 @@ final class ArraySequence implements Sequence
      */
     public function addAt(int $index, $element) : void
     {
-            $this->__template(self::TEMPLATE_E)->match($element);
+        $this->__template(self::TEMPLATE_E)->match($element);
 
         $size = $this->count();
         if ($index < 0 || $index > $size) {
@@ -105,7 +105,7 @@ final class ArraySequence implements Sequence
      */
     public function remove($element) : void
     {
-            $this->__template(self::TEMPLATE_E)->match($element);
+        $this->__template(self::TEMPLATE_E)->match($element);
 
         if (!$this->contains($element)) {
             throw ElementNotFound::create();
@@ -132,7 +132,7 @@ final class ArraySequence implements Sequence
      */
     public function indexOf($element) : int
     {
-            $this->__template(self::TEMPLATE_E)->match($element);
+        $this->__template(self::TEMPLATE_E)->match($element);
 
         foreach ($this->elements as $index => $_element) {
             if ($_element === $element) {
@@ -150,7 +150,7 @@ final class ArraySequence implements Sequence
      */
     public function contains($element) : bool
     {
-            $this->__template(self::TEMPLATE_E)->match($element);
+        $this->__template(self::TEMPLATE_E)->match($element);
 
         foreach ($this->elements as $_element) {
             if ($_element === $element) {
